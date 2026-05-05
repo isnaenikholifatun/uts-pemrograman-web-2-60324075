@@ -1,15 +1,18 @@
 # UTS Pemrograman Web 2 - CRUD Kategori Buku
 
-Aplikasi ini adalah sistem manajemen kategori buku sederhana yang dibangun untuk memenuhi tugas Ujian Tengah Semester (UTS) Pemrograman Web 2. Aplikasi ini memiliki fitur CRUD (Create, Read, Update, Delete) dengan fokus pada keamanan kode menggunakan *Prepared Statements*.
+Aplikasi ini adalah sistem manajemen kategori buku sederhana.
+Dibangun untuk memenuhi tugas Ujian Tengah Semester (UTS) Pemrograman Web 2. 
+Aplikasi ini memiliki fitur CRUD (Create, Read, Update, dan Delete) dengan fokus pada keamanan kode menggunakan *Prepared Statements*.
 
 ## Identitas Mahasiswa
 - **Nama**: Isnaeni Kholifatun
 - **NIM**: 60324075
 - **Kelas**: Pemrograman WEB 2 (B)
 - **Prodi**: Informatika 
+- **Semester**: 4 (empat) 
 
 ## Deskripsi Singkat Aplikasi
-Aplikasi ini memungkinkan pustakawan untuk mengelola data kategori buku dalam perpustakaan. Fitur utama meliputi:
+Dengan aplikasi ini pustakawan dapat mengelola data kategori buku di perpustakaan mereka. Salah satu fitur utama adalah kemampuan untuk menampilkan daftar kategori yang menunjukkan apakah mereka aktif atau nonaktif. Fitur utama meliputi:
 - Menampilkan daftar kategori dengan status aktif/nonaktif.
 - Menambah kategori baru melalui form.
 - Mengubah (Edit) data kategori yang sudah ada.
@@ -18,17 +21,31 @@ Aplikasi ini memungkinkan pustakawan untuk mengelola data kategori buku dalam pe
 - **Tampilan**: Layout rapi dan responsif menggunakan Bootstrap 5.
 
 ## Cara Instalasi dan Menjalankan Aplikasi
-1. **Persiapan Folder**:
-   - Pastikan folder proyek bernama `UTS_60324075` berada di dalam direktori `htdocs` server lokal Anda (seperti XAMPP).
-2. **Konfigurasi Database**:
-   - Buka phpMyAdmin (`localhost/phpmyadmin`).
+1. **Nyalakan Server Lokal**:
+   - Buka aplikasi **XAMPP Control Panel**.
+   - Tekan tombol **Start** pada modul **Apache** dan **MySQL**.
+
+2. **Persiapan Folder**:
+   - Pastikan folder proyek bernama `uts_60324075` sudah diletakkan di dalam direktori `htdocs` server lokal ( `C:\xampp\htdocs\uts_60324075`).
+
+3. **Konfigurasi Database**:
+   - Buka browser dan akses phpMyAdmin: `http://localhost/phpmyadmin`.
    - Buat database baru dengan nama `uts_perpustakaan_60324075`.
-   - Pilih menu **Import** dan unggah file `uts_perpustakaan_60324075.sql` yang tersedia di root proyek.
-3. **Koneksi Database**:
-   - Buka file `config/database.php` dan sesuaikan pengaturan *host*, *user*, *password*, serta nama database dengan server Anda.
-4. **Menjalankan Aplikasi**:
-   - Pastikan modul Apache dan MySQL di XAMPP sudah aktif.
-   - Buka browser dan akses: `http://localhost/UTS_60324075/index.php`.
+   - Pilih database tersebut, lalu klik tab **SQL**.
+   - Buka file `uts_perpustakaan_60324075.sql` masukkan kueri struktur tabel kategori dan sample data dalam kotak di menu SQL tersebut dan klik tombol **Kirim (Go)**.
+   - *(Langkah ini akan secara otomatis membuat tabel `kategori` dan mengisi 3 data sample awal).*
+
+4. **Koneksi Database**:
+   - Buka file `config/database.php`.
+   - Pastikan bagian `DB_NAME` sudah terganti `uts_perpustakaan_60324075`.
+   - Secara *default*, aplikasi ini menggunakan konfigurasi standar XAMPP:
+     - `DB_SERVER` = 'localhost'
+     - `DB_USERNAME` = 'root'
+     - `DB_PASSWORD` = '' (kosong)
+   - Sesuaikan jika server lokal menggunakan password.
+
+5. **Menjalankan Aplikasi**:
+   - Buka browser dan akses URL: `http://localhost/uts_60324075/index.php`.
 
 ## Cara Pengaplikasian
 - **Navigasi Utama**: Gunakan halaman `index.php` untuk melihat seluruh daftar kategori buku.
@@ -40,7 +57,7 @@ Aplikasi ini memungkinkan pustakawan untuk mengelola data kategori buku dalam pe
 ## Struktur Folder
 Berikut adalah susunan file dalam proyek ini:
 ```text
-UTS_60324075/
+uts_60324075/
 ├── config/
 │   └── database.php                # Konfigurasi koneksi database
 ├── create.php                      # Form tambah data kategori
@@ -51,4 +68,4 @@ UTS_60324075/
 └── uts_perpustakaan_60324075.sql   # Export database MySQL
 
 ## Link Repository GitHub
-https://github.com/isnaenikholifatun/uts-pemrograman-web-2-60324075
+[GitHub Repository - isnaenikholifatun (60324075)](https://github.com/isnaenikholifatun/uts-pemrograman-web-2-60324075)
